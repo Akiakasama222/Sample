@@ -3,268 +3,451 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Modern Digital Solutions</title>
+    <title>Alex Carter | Digital Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
     <style>
-        .hero-bg {
+        .hero-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
         }
-        .transition-smooth {
-            transition: all 0.3s ease;
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
         }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800">
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i data-feather="hexagon" class="text-indigo-600 h-8 w-8"></i>
-                        <span class="ml-2 text-xl font-bold text-gray-900">Nexus</span>
-                    </div>
+                    <span class="text-xl font-bold text-indigo-600">AC.</span>
                 </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#" class="text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="#" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Services</a>
-                    <a href="#" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
-                    <a href="#" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Pricing</a>
-                    <a href="#" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-indigo-600 transition">Experience</a>
+                    <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#contact" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">Contact</a>
                 </div>
-                <div class="flex items-center">
-                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-smooth">
-                        Get Started
-                    </button>
-                </div>
+                <button class="md:hidden text-gray-700">
+                    <i data-feather="menu"></i>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div id="hero" class="hero-bg pt-32 pb-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-                <div class="mt-10 mx-auto max-w-md sm:max-w-lg lg:mx-0" data-aos="fade-right">
-                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl sm:leading-tight">
-                        Transform your digital presence
-                    </h1>
-                    <p class="mt-3 text-xl text-indigo-100 sm:mt-5">
-                        We create beautiful, functional digital experiences that drive results for your business.
-                    </p>
-                    <div class="mt-10 sm:flex sm:justify-start">
-                        <div class="rounded-md shadow">
-                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                                Explore Services
-                            </a>
-                        </div>
-                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 md:py-4 md:text-lg md:px-10">
-                                Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0" data-aos="fade-left">
-                    <div class="relative w-full rounded-lg shadow-lg overflow-hidden">
-                        <img class="w-full" src="http://static.photos/technology/1024x576/42" alt="Digital technology">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <div class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase" data-aos="fade-up">Features</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl" data-aos="fade-up" data-aos-delay="100">
-                    A better way to grow your business
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    Everything you need to build, launch, and grow your digital presence.
-                </p>
-            </div>
-
-            <div class="mt-10">
-                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                    <!-- Feature 1 -->
-                    <div class="feature-card bg-white p-6 rounded-lg shadow-md transition-smooth" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="layout"></i>
-                        </div>
-                        <h3 class="mt-5 text-lg leading-6 font-medium text-gray-900">Modern Design</h3>
-                        <p class="mt-2 text-base text-gray-500">
-                            Clean, intuitive interfaces that engage users and enhance their experience.
-                        </p>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="feature-card bg-white p-6 rounded-lg shadow-md transition-smooth" data-aos="fade-up" data-aos-delay="400">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="zap"></i>
-                        </div>
-                        <h3 class="mt-5 text-lg leading-6 font-medium text-gray-900">Lightning Fast</h3>
-                        <p class="mt-2 text-base text-gray-500">
-                            Optimized performance that keeps your visitors engaged and coming back.
-                        </p>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="feature-card bg-white p-6 rounded-lg shadow-md transition-smooth" data-aos="fade-up" data-aos-delay="500">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="smartphone"></i>
-                        </div>
-                        <h3 class="mt-5 text-lg leading-6 font-medium text-gray-900">Fully Responsive</h3>
-                        <p class="mt-2 text-base text-gray-500">
-                            Looks perfect on any device, from desktop to mobile.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Stats Section -->
-    <div class="bg-gray-50 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
-                <div class="text-center" data-aos="fade-up">
-                    <h3 class="text-4xl font-extrabold text-indigo-600">250+</h3>
-                    <p class="mt-2 text-lg font-medium text-gray-900">Happy Clients</p>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-4xl font-extrabold text-indigo-600">500+</h3>
-                    <p class="mt-2 text-lg font-medium text-gray-900">Projects Completed</p>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-4xl font-extrabold text-indigo-600">24/7</h3>
-                    <p class="mt-2 text-lg font-medium text-gray-900">Support</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="bg-indigo-700">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+    <section class="hero-gradient min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                        Ready to transform your business?
-                    </h2>
-                    <p class="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
-                        Get in touch with our team today and let's discuss how we can help you achieve your goals.
-                    </p>
-                </div>
-                <div class="mt-8 lg:mt-0" data-aos="fade-left">
-                    <div class="inline-flex rounded-md shadow">
-                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-                            Contact Us
-                        </a>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Alex Carter</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-indigo-200 mb-6">Senior UX Designer & Frontend Developer</h2>
+                    <p class="text-lg text-indigo-100 mb-8">Creating digital experiences that are beautiful, functional, and accessible for everyone.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-white text-indigo-600 rounded-md font-medium hover:bg-gray-100 transition">Hire Me</a>
+                        <a href="#" class="px-6 py-3 border border-white text-white rounded-md font-medium hover:bg-white hover:bg-opacity-10 transition">Download CV</a>
                     </div>
-                    <div class="inline-flex ml-3 rounded-md shadow">
-                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 bg-opacity-60 hover:bg-opacity-70">
-                            Learn More
-                        </a>
+                </div>
+                <div data-aos="fade-left" class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-white bg-opacity-20 rounded-full blur-lg"></div>
+                        <img src="http://static.photos/people/640x360/42" alt="Alex Carter" class="relative z-10 w-full max-w-md rounded-full border-4 border-white shadow-xl">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">I'm a passionate designer and developer with 7+ years of experience creating digital products that users love.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="compass" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">My Mission</h3>
+                    <p class="text-gray-600">To bridge the gap between beautiful design and functional technology, creating products that solve real problems.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="award" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">My Values</h3>
+                    <p class="text-gray-600">Accessibility, simplicity, and attention to detail guide every decision I make in my design and development process.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="heart" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">My Passion</h3>
+                    <p class="text-gray-600">I love mentoring junior designers, contributing to open source projects, and speaking at design conferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Work Experience</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">My professional journey through the years</p>
+            </div>
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:via-indigo-500 before:to-gray-200 md:before:mx-auto md:before:left-0 md:before:right-0">
+                <!-- Timeline Item 1 -->
+                <div data-aos="fade-right" class="relative pl-8 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                    <div class="md:pr-8 md:text-right pt-1">
+                        <p class="text-sm text-indigo-600">2021 - Present</p>
+                    </div>
+                    <div class="pb-8 md:col-start-2 timeline-item">
+                        <h3 class="text-xl font-semibold text-gray-800">Lead UX Designer</h3>
+                        <p class="text-indigo-600 mb-2">TechSolutions Inc.</p>
+                        <p class="text-gray-600">Leading a team of 5 designers to create enterprise SaaS products. Responsible for design strategy, user research, and maintaining design systems.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div data-aos="fade-left" class="relative pl-8 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                    <div class="md:pr-8 md:text-right pt-1">
+                        <p class="text-sm text-indigo-600">2018 - 2021</p>
+                    </div>
+                    <div class="pb-8 md:col-start-2 timeline-item">
+                        <h3 class="text-xl font-semibold text-gray-800">Senior UI/UX Designer</h3>
+                        <p class="text-indigo-600 mb-2">DigitalAgency LLC</p>
+                        <p class="text-gray-600">Designed and prototyped web and mobile applications for clients across healthcare, finance, and e-commerce industries.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 3 -->
+                <div data-aos="fade-right" class="relative pl-8 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                    <div class="md:pr-8 md:text-right pt-1">
+                        <p class="text-sm text-indigo-600">2016 - 2018</p>
+                    </div>
+                    <div class="pb-8 md:col-start-2 timeline-item">
+                        <h3 class="text-xl font-semibold text-gray-800">UX Designer</h3>
+                        <p class="text-indigo-600 mb-2">StartUp Ventures</p>
+                        <p class="text-gray-600">Wore multiple hats in a fast-paced startup environment, from user research to interaction design and front-end development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">My Skills</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">The tools and technologies I use to bring ideas to life</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Design Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">UI/UX Design</span>
+                                <span class="text-indigo-600">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">User Research</span>
+                                <span class="text-indigo-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Prototyping</span>
+                                <span class="text-indigo-600">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Development Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">HTML/CSS</span>
+                                <span class="text-indigo-600">98%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">JavaScript</span>
+                                <span class="text-indigo-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">React</span>
+                                <span class="text-indigo-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up" class="mt-12">
+                <h3 class="text-xl font-semibold mb-6 text-gray-800">Tools I Use</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                        <i data-feather="figma" class="text-indigo-600"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                        <i data-feather="code" class="text-indigo-600"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                        <i data-feather="github" class="text-indigo-600"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                        <i data-feather="trello" class="text-indigo-600"></i>
+                        <span>Trello</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                        <i data-feather="slack" class="text-indigo-600"></i>
+                        <span>Slack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">A selection of my recent work across various industries</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/technology/640x360/1" alt="Project 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">FinTech Dashboard</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive financial dashboard for personal wealth management.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">UI Design</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">React</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">Data Viz</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/health/640x360/2" alt="Project 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Telehealth App</h3>
+                        <p class="text-gray-600 mb-4">Mobile application connecting patients with healthcare providers.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">UX Research</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">iOS/Android</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/education/640x360/3" alt="Project 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Learning Platform</h3>
+                        <p class="text-gray-600 mb-4">Interactive learning management system for online education.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">Web Design</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">Gamification</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up" class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-indigo-600 text-indigo-600 rounded-md font-medium hover:bg-indigo-600 hover:text-white transition">
+                    View All Projects
+                    <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition">Send Message</button>
+                    </form>
+                </div>
+                <div data-aos="fade-left" class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full text-indigo-600">
+                            <i data-feather="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-800">Email</h3>
+                            <p class="text-gray-600">hello@alexcarter.design</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full text-indigo-600">
+                            <i data-feather="phone" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-800">Phone</h3>
+                            <p class="text-gray-600">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full text-indigo-600">
+                            <i data-feather="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-800">Location</h3>
+                            <p class="text-gray-600">San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Connect With Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="p-2 bg-gray-100 rounded-full text-gray-700 hover:bg-indigo-600 hover:text-white transition">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="p-2 bg-gray-100 rounded-full text-gray-700 hover:bg-indigo-600 hover:text-white transition">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="p-2 bg-gray-100 rounded-full text-gray-700 hover:bg-indigo-600 hover:text-white transition">
+                                <i data-feather="dribbble"></i>
+                            </a>
+                            <a href="#" class="p-2 bg-gray-100 rounded-full text-gray-700 hover:bg-indigo-600 hover:text-white transition">
+                                <i data-feather="github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
-                    <ul class="mt-4 space-y-4">
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">About</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Products</h3>
-                    <ul class="mt-4 space-y-4">
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Web Design</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Development</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Marketing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Resources</h3>
-                    <ul class="mt-4 space-y-4">
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Documentation</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Guides</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">API Status</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect</h3>
-                    <ul class="mt-4 space-y-4">
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Twitter</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Facebook</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
-                <div class="flex space-x-6 md:order-2">
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i data-feather="twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i data-feather="facebook"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i data-feather="instagram"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
+    <footer class="py-12 bg-gray-900 text-gray-400">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-white mb-2">Alex Carter</h2>
+                <p class="mb-8">Creating digital experiences that matter</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
                         <i data-feather="linkedin"></i>
                     </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="dribbble"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="github"></i>
+                    </a>
                 </div>
-                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-                    &copy; 2023 Nexus. All rights reserved.
-                </p>
+                <p class="text-sm">&copy; 2023 Alex Carter. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Initialize animations and icons
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
-        feather.replace();
         
-        // Vanta.js background for hero section
-        VANTA.GLOBE({
-            el: "#hero",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x3f83f8,
-            backgroundColor: 0x667eea,
-            size: 0.8
+        // Animate skill bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                    }
+                });
+            }, {threshold: 0.5});
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
         });
     </script>
+    <script>feather.replace();</script>
 </body>
 </html>
